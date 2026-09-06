@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f5f3ee;
+  --text: #171717;
+  --muted: #77736b;
+  --border: #d8d4cc;
+  --accent: #e45b32;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.page {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+/* Header */
+
+.header {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+}
+
+/* Project title */
+
+.intro {
+  padding: 100px 0 80px;
+}
+
+h1 {
+  margin: 0;
+  max-width: 800px;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.subtitle {
+  margin: 25px 0 0;
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+/* Prompt */
+
+.prompt {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 45px 0;
+}
+
+.prompt-text {
+  max-width: 750px;
+  margin: 25px 0 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Response */
+
+.response {
+  padding: 90px 0;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 35px 0;
+  background: #ddd9d0;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #858077;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+.description {
+  max-width: 700px;
+  margin: 40px auto;
+  font-size: 1.1rem;
+}
+
+.image-placeholder.small {
+  aspect-ratio: 4 / 3;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption {
+  max-width: 700px;
+  margin: -20px auto 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/*
+  To add a real image, replace:
+
+  <div class="image-placeholder">
+    <span>PROJECT IMAGE</span>
+  </div>
+
+  with:
+
+  <img class="project-image" src="images/my-project.jpg"
+       alt="Description of my project">
+
+  You can add as many images as you want.
+*/
+
+.project-image {
+  display: block;
+  width: 100%;
+  margin: 35px 0;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .page {
+    width: min(100% - 28px, 900px);
+  }
+
+  .header {
+    padding: 22px 0;
+  }
+
+  .intro {
+    padding: 70px 0 60px;
+  }
+
+  .prompt-text {
+    font-size: 1.2rem;
+  }
+
+  .response {
+    padding: 65px 0;
+  }
+}
+
+
+/* Homepage */
+
+.project-list {
+  padding: 70px 0;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 35px;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+}
+
+.project-thumb {
+  aspect-ratio: 4 / 3;
+  background: #ddd9d0;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #858077;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+.project h2 {
+  margin: 8px 0;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.project p:not(.label) {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
